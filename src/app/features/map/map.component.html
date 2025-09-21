@@ -1,3 +1,32 @@
 <mgl-map class="w-full h-full min-h-96 rounded-md overflow-hidden" 
+[fitBounds]="extend()"
       [style]="'https://api.maptiler.com/maps/streets-v2/style.json?key=9Ox76TX4tpd2abHGhUs7'">
+
+        <!-- Fuente GeoJSON -->
+  <mgl-geojson-source id="geoms" [data]="geojson()">
+  </mgl-geojson-source>
+
+  <!-- Ejemplo: polígonos -->
+  <mgl-layer
+    id="predios"
+    type="fill"
+    source="geoms"
+    [paint]="{
+      'fill-color': '#088',
+      'fill-opacity': 0.5
+    }"
+  >
+  </mgl-layer>
+
+  <!-- Ejemplo: líneas -->
+  <mgl-layer
+    id="rutas"
+    type="line"
+    source="geoms"
+    [paint]="{
+      'line-color': '#f00',
+      'line-width': 3
+    }"
+  >
+  </mgl-layer>
 </mgl-map>
