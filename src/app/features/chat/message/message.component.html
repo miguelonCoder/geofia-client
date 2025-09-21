@@ -1,0 +1,12 @@
+<div [ngClass]="{
+  'justify-end': message().type === 'user',
+  'justify-start': message().type === 'system'
+}"
+class="flex flex-row my-6">
+  <span [ngClass]="{
+  'bg-blue-200 text-slate-800': message().type === 'user',
+  'bg-slate-200 text-slate-800': message().type === 'system'
+}"
+class="p-2 rounded-xl w-4/5 wrap-break-word"
+  >{{message().message}}</span>
+</div>

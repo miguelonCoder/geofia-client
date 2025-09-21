@@ -1,0 +1,12 @@
+<div class="h-full overflow-y-auto hide-scrollbar">
+  <ul class="">
+    @for (message of store.messages(); track message.id) {
+      <app-message [message]="message" />
+    }
+    @if (store.queryStatus() === statusOptions.Loading) {
+      <span class="w-full flex justify-center py-4">
+        <app-spinner [size]="24" />
+      </span>
+    }
+  </ul>
+</div>

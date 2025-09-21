@@ -1,0 +1,7 @@
+<textarea name="chat-input" id="" [(ngModel)]="chatInput"
+  class="w-full resize-none p-2 border border-slate-300 rounded-xl placeholder:text-slate-400"
+  (input)="autoResize($event)" placeholder="Hola soy Geofia ¿sobre qué quieres consultar hoy?"></textarea>
+<div class="flex justify-end mt-4">
+  <button (click)="click()"
+    class="px-4 py-1 rounded-full bg-slate-700 text-white hover:bg-slate-900 hover:cursor-pointer ease-in duration-200">Enviar</button>
+</div>
